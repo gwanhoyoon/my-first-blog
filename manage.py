@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 import os
 import sys
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
+    print(__name__)
+    app = QApplication(sys.argv)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
