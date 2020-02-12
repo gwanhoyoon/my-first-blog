@@ -17,10 +17,6 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 
 def post_new(request):
-    app = QApplication(sys.argv)
-    a = MyMain()
-    a.show()
-    sys.exit(app.exec_())
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
@@ -31,6 +27,10 @@ def post_new(request):
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm()
+    app = QApplication(sys.argv)
+    #a = MyMain()
+    #a.show()
+    #sys.exit(app.exec())
     return render(request, 'blog/post_edit.html', {'form': form})
 
 def post_edit(request, pk):
