@@ -7,6 +7,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import sys
+import threading
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -27,10 +28,13 @@ def post_new(request):
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm()
-    #app = QApplication(sys.argv)
-    #a = MyMain()
-    #a.show()
-    #sys.exit(app.exec())
+    
+    app = QApplication(sys.argv)
+    t = threading.Thread(target=QApplication, args=list(sys.argv))
+    t.start()
+    a = MyMain()
+    a.show()
+    sys.exit(app.exec())
     return render(request, 'blog/post_edit.html', {'form': form})
 
 def post_edit(request, pk):
