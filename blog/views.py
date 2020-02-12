@@ -27,7 +27,7 @@ def post_new(request):
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm()
-    app = QApplication(sys.argv)
+    #app = QApplication(sys.argv)
     #a = MyMain()
     #a.show()
     #sys.exit(app.exec())
