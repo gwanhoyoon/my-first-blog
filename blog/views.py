@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
 from .forms import PostForm
-from .rcwa import *
+#from .rcwa import *
 #from PyQt5.QtCore import *
 #from PyQt5.QtWidgets import *
 #from PyQt5.QtGui import *
