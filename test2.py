@@ -17,4 +17,4 @@ if __name__ == "__main__":
     print(sys.argv)
     a = MyMain()
     a.show()
-    sys.exit(app.exec_())
+    #sys.exit(app.exec_())
