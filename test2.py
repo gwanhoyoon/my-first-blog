@@ -13,7 +13,7 @@ class MyMain(QMainWindow):
 if __name__ == "__main__":
     print(threading.current_thread())
     print(threading.main_thread())
-    app = QApplication(sys.argv)
+    #app = QApplication(sys.argv)
     print(sys.argv)
     #a = MyMain()
     #a.show()
