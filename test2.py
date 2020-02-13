@@ -1,6 +1,6 @@
-#from PyQt5.QtCore import *
-#from PyQt5.QtWidgets import *
-#from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtGui import *
 import PyQt5
 import numpy
 import matplotlib
@@ -8,7 +8,7 @@ import sys
 import os
 import threading
 
-class MyMain(PyQt5.QtWidgets.QMainWindow):
+class MyMain(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         print(__name__)
