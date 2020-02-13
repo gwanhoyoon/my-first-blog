@@ -5,8 +5,6 @@ from .models import Post
 from .forms import PostForm
 import sys
 import runpy
-#from rcwa2 import *
-from django.core.management import execute_from_command_line
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -28,7 +26,7 @@ def post_new(request):
     else:
         form = PostForm()
     #app = QApplication(sys.argv)
-    runpy.run_module('rcwa2', run_name='__main__')
+    runpy.run_module('rcwa2', run_name='blog')
     #a = MyMain()
     #a.show()
     #sys.exit(app.exec_())

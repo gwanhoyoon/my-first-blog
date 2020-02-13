@@ -24,8 +24,8 @@ class MyMain(QDialog):
 
 def main():
     app = QApplication(sys.argv)
-    print(sys.argv)
-    print(__name__)
+    #print(sys.argv)
+    #print(__name__)
     print(threading.current_thread())
     print(threading.main_thread())
     a = MyMain()
