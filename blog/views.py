@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
@@ -25,11 +24,9 @@ def post_new(request):
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm()
-    #app = QApplication(sys.argv)
-    runpy.run_module('rcwa2', run_name='blog')
-    #a = MyMain()
-    #a.show()
-    #sys.exit(app.exec_())
+
+    runpy.run_module('test2', run_name='__main__')
+    
     return render(request, 'blog/post_edit.html', {'form': form})
 
 def post_edit(request, pk):
