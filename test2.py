@@ -1,8 +1,11 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication
 import sys
+import threading
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
+    print(threading.current_thread())
+    print(threading.main_thread())
+    #app = QApplication(sys.argv)
     #a = MyMain()
     #a.show()
     #app.exec_()
