@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import sys
 import os
-import re
 
 class MyMain(QDialog):
     def __init__(self):
@@ -24,10 +23,10 @@ class MyMain(QDialog):
         self.setLayout(layout)
 
 def main():
-    app = QApplication(sys.argv)
-    a = MyMain()
-    a.show()
-    sys.exit(app.exec_())
+    #app = QApplication(sys.argv)
+    #a = MyMain()
+    #a.show()
+    #sys.exit(app.exec_())
 
 if __name__ == "__main__":
     main()

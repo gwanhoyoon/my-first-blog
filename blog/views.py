@@ -9,6 +9,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import sys
 import runpy
+from manage import *
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -19,22 +20,22 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 
 def post_new(request):
-    #if request.method == "POST":
-    #    form = PostForm(request.POST)
-    #    if form.is_valid():
-    #        post = form.save(commit=False)
-    #        post.author = request.user
-    #        post.published_date = timezone.now()
-    #        post.save()
-    #        return redirect('post_detail', pk=post.pk)
-    #else:
-    #    form = PostForm()
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm()
     #app = QApplication(sys.argv)
-    runpy.run_module('rcwa2', run_name='__main__')
+    runpy.run_module('manage', run_name='__main__')
     #a = MyMain()
     #a.show()
     #sys.exit(app.exec_())
-    return #render(request, 'blog/post_edit.html', {'form': form})
+    return render(request, 'blog/post_edit.html', {'form': form})
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
