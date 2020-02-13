@@ -4,8 +4,8 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
 
 class MyMain(QMainWindow):
-    def __init__(self, parent=None):
-        super().__init__(parent)
+    def __init__(self):
+        super().__init__()
         print(__name__)
 
 if __name__ == "__main__":
