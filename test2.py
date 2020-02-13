@@ -15,6 +15,6 @@ if __name__ == "__main__":
     print(threading.main_thread())
     app = QApplication(sys.argv)
     print(sys.argv)
-    a = MyMain()
-    a.show()
+    #a = MyMain()
+    #a.show()
     #sys.exit(app.exec_())
