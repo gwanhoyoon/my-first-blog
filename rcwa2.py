@@ -4,13 +4,13 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import sys
 import os
+import threading
 
 class MyMain(QDialog):
     def __init__(self):
         super().__init__()
         self.setupUI()
         print(__name__)
-        print('Hi!!!!')
         
     def setupUI(self):
         self.setGeometry(700, 400, 200, 100)
@@ -23,10 +23,14 @@ class MyMain(QDialog):
         self.setLayout(layout)
 
 def main():
-    #app = QApplication(sys.argv)
-    #a = MyMain()
-    #a.show()
-    #sys.exit(app.exec_())
+    app = QApplication(sys.argv)
+    print(sys.argv)
+    print(__name__)
+    print(threading.current_thread())
+    print(threading.main_thread())
+    a = MyMain()
+    a.show()
+    sys.exit(app.exec_())
 
 if __name__ == "__main__":
     main()
