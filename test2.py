@@ -12,4 +12,4 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     a = MyMain()
     a.show()
-    sys.exit(app.exec_())
+    app.exec_()
