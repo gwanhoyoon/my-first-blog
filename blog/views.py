@@ -25,8 +25,8 @@ def post_new(request):
     else:
         form = PostForm()
 
-    runpy.run_module('test2', run_name='__main__')
-    
+    runpy.run_module('test2')#, run_name='__main__')
+
     return render(request, 'blog/post_edit.html', {'form': form})
 
 def post_edit(request, pk):
