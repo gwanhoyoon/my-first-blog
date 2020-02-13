@@ -2,7 +2,6 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow
 #from PyQt5.QtGui import *
 import sys
-import os
 import threading
 
 class MyMain(QMainWindow):
@@ -13,7 +12,7 @@ class MyMain(QMainWindow):
 if __name__ == "__main__":
     print(threading.current_thread())
     print(threading.main_thread())
-    #app = QApplication(sys.argv)
+    app = QApplication([''])
     #a = MyMain()
     #a.show()
     #sys.exit(app.exec_())
