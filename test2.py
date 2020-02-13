@@ -1,9 +1,6 @@
-from PyQt5.QtCore import *
+#from PyQt5.QtCore import *
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from PyQt5.QtGui import *
-import PyQt5
-import numpy
-import matplotlib
+#from PyQt5.QtGui import *
 import sys
 import os
 import threading
